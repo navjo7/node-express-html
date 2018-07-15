@@ -10,6 +10,10 @@ router.post('/', (req,res,next)=>{
        return res.status(500).json({
             message: "Invalid request"
         })
+    }else if(isNaN(rate)){
+        return res.status(201).json({
+            message: "Invalid hourly rate"
+        })
     }
     if(rate>50){
        return res.status(201).json({

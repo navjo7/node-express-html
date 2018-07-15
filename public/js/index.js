@@ -14,7 +14,10 @@ jQuery('#user-Form').on('submit', function (e) {
         contentType: 'application/json', 
         data: finalObj,
         success: function(res){
-            console.log("success",res)
+            e.preventDefault();
+
+            $('#result').html("Result :"+ JSON.stringify(res));
+            // console.log("success",res)
         },
         failure: function(err){
             console.log("error",err)
